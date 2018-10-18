@@ -1,0 +1,15 @@
+version: '1.0'
+steps:
+  BuildingDockerImage:
+    title: Building Docker Image
+    type: build
+    image_name: hellodocker
+    working_directory: ./
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+    dockerfile: Dockerfile
+  StoreChart:
+    title: Storing Helm chart
+    image: 'codefresh/cfstep-helm:2.9.1'
+    environment:
+      - ACTION=push
+      - CHART_REF=charts/hello
