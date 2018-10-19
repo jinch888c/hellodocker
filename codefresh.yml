@@ -5,11 +5,11 @@ steps:
     type: build
     image_name: hellodocker
     working_directory: ./
-    tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     dockerfile: Dockerfile
   StoreChart:
     title: Storing Helm chart
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
       - ACTION=push
-      - CHART_REF=charts/hello
+      - CHART_REF=hello-svc
