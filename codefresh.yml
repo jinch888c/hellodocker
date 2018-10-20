@@ -12,4 +12,4 @@ steps:
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
       - ACTION=push
-      - CHART_REF=hello-svc
+      - CHART_REF=hellodocker
