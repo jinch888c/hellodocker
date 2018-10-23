@@ -7,8 +7,9 @@ steps:
     working_directory: ./
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     dockerfile: Dockerfile
-  install:
-  image: 'codefresh/cfstep-helm:2.9.1'
-  environment:
-    - CHART_REF=hello-svc
-    - ACTION=push
+  StoreChart:
+    title: Storing Helm chart
+    image: 'codefresh/cfstep-helm:2.9.1'
+    environment:
+      - ACTION=push
+      - CHART_REF=hello-svc
