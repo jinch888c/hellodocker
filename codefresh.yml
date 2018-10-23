@@ -7,6 +7,4 @@ steps:
     - helm repo add remote http://103.60.165.172:8081/artifactory/helm
     - helm dependency build hello-svc
     - cf_export PACKAGE="$(helm package hello-svc --destination /tmp | cut -d " " -f 8)"
-  push_helm:
-    commands:
-    - curl -uadmin:12345678 -T $PACKAGE "http://103.60.165.172:8081/artifactory/helm-local/hello-svc-0.2.0.tgz"
+    - curl -uadmin:12345678 -T '$PACKAGE' "http://103.60.165.172:8081/artifactory/helm-local/hello-svc-0.2.0.tgz"
