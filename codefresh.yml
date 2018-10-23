@@ -7,9 +7,8 @@ steps:
     working_directory: ./
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     dockerfile: Dockerfile
-  deploy:
+  install:
   image: 'codefresh/cfstep-helm:2.9.1'
   environment:
     - CHART_REF=hello-svc
-    - RELEASE_NAME=hellosvc-prod
-    - KUBE_CONTEXT=game
+    - ACTION=push
