@@ -1,15 +1,6 @@
-version: '1.0'
-steps:
-  BuildingDockerImage:
-    title: Building Docker Image
-    type: build
-    image_name: hellodocker
-    working_directory: ./
-    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
-    dockerfile: Dockerfile
-  StoreChart:
-    title: Storing Helm chart
-    image: 'codefresh/cfstep-helm:2.9.1'
-    environment:
-      - ACTION=push
-      - CHART_REF=hello-svc
+deploy:
+  image: codefresh/cfstep-helm:2.9.0
+  environment:
+    - CHART_REF=hello-svc
+    - RELEASE_NAME=hellosvc-prod
+    - KUBE_CONTEXT=kube-prod
