@@ -6,3 +6,5 @@ steps:
     environment:
       - ACTION=install
       - CHART_REF=hello-svc
+      - RELEASE_NAME=hello-svc-prod
+      - KUBE_CONTEXT=game
