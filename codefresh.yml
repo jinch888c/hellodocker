@@ -3,8 +3,8 @@ steps:
   helm_package:
     image: 'codefresh/cfstep-helm:2.9.1'
     commands:
-    	- helm repo add helm http://103.60.165.172:8081/artifactory/helm --username admin --password 12345678
-    	- helm repo add remote http://103.60.165.172:8081/artifactory/helm
-    	- helm dependency build hello-svc
-    	- cf_export PACKAGE="$(helm package hello-svc --destination /tmp | cut -d " " -f 8)"
-    	- helm push $PACKAGE remote
+    - helm repo add helm http://103.60.165.172:8081/artifactory/helm --username admin --password 12345678
+    - helm repo add remote http://103.60.165.172:8081/artifactory/helm
+    - helm dependency build hello-svc
+    - cf_export PACKAGE="$(helm package hello-svc --destination /tmp | cut -d " " -f 8)"
+    - helm push $PACKAGE remote
