@@ -1,4 +1,6 @@
-deploy:
+version: '1.0'
+steps:
+  deploy:
   image: codefresh/cfstep-helm:2.9.0
   environment:
     - CHART_REF=hello-svc
