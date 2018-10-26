@@ -4,5 +4,7 @@ steps:
     title: Storing Helm chart
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
-      - ACTION=push
+      - ACTION=install
       - CHART_REF=hello-svc
+      - RELEASE_NAME=hello-svc-prod
+      - KUBE_CONTEXT=game
