@@ -1,6 +1,6 @@
 version: '1.0'
 steps:
-  Push chart to codefresh
+  Push chart to codefresh:
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
       - ACTION=push
