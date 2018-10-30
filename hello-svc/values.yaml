@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: docker-local.0851xg.com/mysql-test
+  repository: docker-local.0851xg.com/hello2
   tag: master
   pullPolicy: IfNotPresent
 service:
