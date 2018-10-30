@@ -5,8 +5,8 @@ steps:
     environment:
       - ACTION=push
       - CHART_REF=hello-svc
-  Intall to k8s:
-    title: Storing Helm chart
+  Install to k8s:
+    title: Install Helm chart
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
       - ACTION=install
