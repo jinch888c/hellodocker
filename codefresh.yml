@@ -1,6 +1,11 @@
 version: '1.0'
 steps:
-  StoreChart:
+  Push chart to codefresh
+    image: 'codefresh/cfstep-helm:2.9.1'
+    environment:
+      - ACTION=push
+      - CHART_REF=hello-svc
+  Intall to k8s:
     title: Storing Helm chart
     image: 'codefresh/cfstep-helm:2.9.1'
     environment:
